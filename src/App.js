@@ -1,14 +1,12 @@
-
-
 import './App.css';
-import QuestionsList from './components/QuestionsList'
+import AnswersList from './components/AnswersList'
 
 function App() {
 
   return( 
   <div className='container'>
-   <h1>why did the js developer quite his job?</h1>
-    <QuestionsList/>
+   <h1>What is the purpose of a "constructor" in object-oriented programming?</h1>
+    <AnswersList/>
   </div>
   );
 }

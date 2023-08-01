@@ -1,22 +1,22 @@
 
 import { useState } from 'react';
-import img from '../correctIcon.png'
+import correctIcon from '../correctIcon.png'
 
-export default function QuestionsList() {
+export default function AnswersList() {
     const [answersState, setAnswersState] = useState()
-    const [answers, setAnswers] = useState([{
+    const [answers] = useState([{
         id:1,
-        answer: "lablablab",
-        correctness: true
+        answer: "The constructor is used to allocate memory for an object.",
+        correctness: false
       }, 
       {
         id:2,
-        answer: "lablablablablablab",
-        correctness: false
+        answer: "The constructor is a method that is called when an object is created to initialize its state.",
+        correctness: true
       },
       {
         id:2,
-        answer: "lablablablablablablablablablablablab",
+        answer: "The constructor is used to define class methods and properties.",
         correctness: false
       }]);
 
@@ -25,7 +25,7 @@ export default function QuestionsList() {
     //     let color = ans.correctness? 'green': 'red'
     //      e.target.style.backgroundColor = color
     //   }
-    function check(e,ans) {
+    function check(ans) {
         console.log(ans.correctness);
         setAnswersState(ans.correctness) 
         console.log(answersState);
@@ -35,12 +35,12 @@ export default function QuestionsList() {
     return(
         <>
           { answers.map((ans,index) => 
-                <div onClick={(e)=>check(e,ans)} className="answer">
+                <div onClick={()=>check(ans)} className="answer">
                      <p key={index}>{ans.answer}</p>
                      {
                         // answersState && answersState === ans.correctness ? "coreceeeeet" : ""
                         // answersState && answersState === ans.correctness ? <p style={{color:"green"}}>correct</p> : ""
-                        answersState && answersState === ans.correctness ? <img src={img} /> : ""
+                        answersState && answersState === ans.correctness ? <img src={correctIcon} /> : ""
                      }
                  </div>)
           }
